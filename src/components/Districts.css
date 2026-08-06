@@ -1,8 +1,19 @@
 .districts {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   background: rgba(10, 12, 10, 0.86);
-  padding: 7rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.districts-head {
+  position: relative;
+  z-index: 5;
   text-align: center;
+  padding: 4rem 1.5rem 0;
+  flex: none;
 }
 
 .districts-eyebrow {
@@ -15,9 +26,9 @@
 }
 
 .districts-heading {
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2rem;
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 400;
   text-transform: uppercase;
   line-height: 1.05;
@@ -31,7 +42,7 @@
   justify-content: center;
   gap: 1rem;
   max-width: 520px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
 }
 
 .districts-search input {
@@ -61,35 +72,115 @@
   white-space: nowrap;
 }
 
-.districts-carousel {
+.districts-track-viewport {
   position: relative;
-  width: 100%;
-  max-width: 1300px;
-  height: 520px;
-  margin: 0 auto;
+  flex: 1;
+  overflow: hidden;
 }
 
-.districts-hint {
-  margin: 1.5rem 0 0;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.4);
+.districts-track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.districts-panel {
+  flex: none;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+}
+
+.districts-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.district-card {
+  position: relative;
+  padding: 1.5rem 1.5rem 1.4rem;
+  border-radius: 12px;
+  background: rgba(10, 12, 10, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 2px solid var(--district-accent, #ff9933);
+  text-align: left;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.district-card:hover {
+  border-color: rgba(255, 153, 51, 0.35);
+}
+
+.district-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.district-card p {
+  margin: 0;
+  font-size: 0.83rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.districts-progress {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.districts-progress span {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.2s ease;
+}
+
+.districts-progress span.is-active {
+  background: #ff9933;
 }
 
 .districts-empty {
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
   padding: 2rem 0;
+  margin: auto;
+}
+
+@media (max-width: 900px) {
+  .districts-panel-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
-  .districts {
-    padding: 5.5rem 1.5rem;
+  .districts-head {
+    padding: 2.5rem 1.5rem 0;
   }
   .districts-search {
     flex-direction: column;
     align-items: stretch;
   }
-  .districts-carousel {
-    height: 380px;
+  .districts-panel {
+    padding: 1rem 1.5rem;
+  }
+  .districts-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 }

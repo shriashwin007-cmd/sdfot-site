@@ -20,7 +20,12 @@ export function useDepthTransition(ref) {
 
     const prev = findPrevDepthSection(el)
 
+    // transformPerspective is scoped to this element's own transform (adds
+    // perspective() inline), unlike an ancestor CSS `perspective` property,
+    // which would create a containing block that breaks position:fixed for
+    // any pinned ScrollTrigger sections elsewhere in the tree.
     gsap.set(el, {
+      transformPerspective: 1200,
       transformStyle: 'preserve-3d',
       willChange: 'transform, opacity',
       z: -200,

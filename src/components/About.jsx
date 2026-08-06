@@ -2,7 +2,9 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import TiltCard from './TiltCard'
 import { useDepthTransition } from '../lib/useDepthTransition'
+import { useBatchReveal } from '../lib/useBatchReveal'
 import './About.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -34,6 +36,7 @@ export default function About() {
   const ref = useRef(null)
 
   useDepthTransition(ref)
+  useBatchReveal(ref, '.pathway-card')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -47,19 +50,6 @@ export default function About() {
           stagger: 0.12,
           ease: 'power3.out',
           scrollTrigger: { trigger: ref.current, start: 'top 70%' },
-        }
-      )
-
-      gsap.fromTo(
-        '.pathway-card',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: '.pathway-grid', start: 'top 80%' },
         }
       )
     }, ref)
@@ -85,11 +75,11 @@ export default function About() {
 
       <div className="pathway-grid">
         {PATHWAY.map((step) => (
-          <div className="pathway-card" key={step.n}>
+          <TiltCard className="pathway-card" key={step.n}>
             <span className="pathway-number">{step.n}</span>
             <h3>{step.title}</h3>
             <p>{step.text}</p>
-          </div>
+          </TiltCard>
         ))}
       </div>
     </section>

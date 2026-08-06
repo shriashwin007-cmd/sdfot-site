@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
 import { useDepthTransition } from '../lib/useDepthTransition'
+import { useMagnetic } from '../lib/useMagnetic'
 import './Footer.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -15,8 +16,10 @@ const SPONSORS = [
 
 export default function Footer() {
   const ref = useRef(null)
+  const btnRef = useRef(null)
 
   useDepthTransition(ref)
+  useMagnetic(btnRef, { strength: 0.35, radius: 70 })
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -45,7 +48,7 @@ export default function Footer() {
           Register for your district selection and take the first step
           toward Tamil Nadu's biggest grassroots cricket pathway.
         </p>
-        <a className="footer-btn" href="#registration">
+        <a className="footer-btn" href="#registration" ref={btnRef}>
           Register Now
         </a>
       </div>

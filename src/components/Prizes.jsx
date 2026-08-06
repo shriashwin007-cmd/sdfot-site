@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import TiltCard from './TiltCard'
 import { useDepthTransition } from '../lib/useDepthTransition'
 import './Prizes.css'
 
@@ -96,10 +97,10 @@ export default function Prizes() {
 
       <div className="prize-grid">
         {PRIZES.map((p) => (
-          <div className="prize-card" key={p.place}>
+          <TiltCard className="prize-card" key={p.place} max={6}>
             <p className="prize-place">{p.place} Prize</p>
             <p className="prize-amount">{p.amount}</p>
-          </div>
+          </TiltCard>
         ))}
       </div>
 

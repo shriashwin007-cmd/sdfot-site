@@ -12,12 +12,14 @@ import Districts from './components/Districts'
 import Footer from './components/Footer'
 import FloatingSocial from './components/FloatingSocial'
 import Divider from './components/Divider'
+import CustomCursor from './components/CustomCursor'
 import './App.css'
 
 function App() {
   return (
     <>
       <SceneCanvas />
+      <CustomCursor />
       <div id="top">
         <SmoothScroll />
         <Nav />

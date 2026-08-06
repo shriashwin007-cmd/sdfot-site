@@ -138,14 +138,32 @@
 }
 
 .footer-grid ul a {
+  position: relative;
+  display: inline-block;
   color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease;
 }
 
+.footer-grid ul a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: #ff9933;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
 .footer-grid ul a:hover {
   color: #ff9933;
+}
+
+.footer-grid ul a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .footer-address,

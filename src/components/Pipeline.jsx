@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import TiltCard from './TiltCard'
 import { useDepthTransition } from '../lib/useDepthTransition'
 import './Pipeline.css'
 
@@ -81,12 +82,12 @@ export default function Pipeline() {
 
       <div className="stat-grid">
         {STATS.map((stat) => (
-          <div className="stat-card" key={stat.label}>
+          <TiltCard className="stat-card" key={stat.label} max={5}>
             <p className="stat-value" data-value={stat.value}>
               0
             </p>
             <p className="stat-label">{stat.label}</p>
-          </div>
+          </TiltCard>
         ))}
       </div>
     </section>
