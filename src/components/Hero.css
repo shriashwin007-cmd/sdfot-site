@@ -25,58 +25,6 @@
   z-index: 1;
 }
 
-/* Nav */
-
-.hero-nav {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.75rem 3rem;
-}
-
-.hero-logo {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
-  color: #fff;
-}
-
-.hero-menu {
-  list-style: none;
-  display: flex;
-  gap: 2.25rem;
-  margin: 0;
-  padding: 0;
-}
-
-.hero-menu a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  transition: color 0.2s ease;
-}
-
-.hero-menu a:hover {
-  color: #ff9933;
-}
-
-@media (max-width: 720px) {
-  .hero-nav {
-    padding: 1.25rem 1.5rem;
-  }
-  .hero-menu {
-    gap: 1.1rem;
-  }
-  .hero-menu a {
-    font-size: 0.8rem;
-  }
-}
-
 /* Content */
 
 .hero-content {

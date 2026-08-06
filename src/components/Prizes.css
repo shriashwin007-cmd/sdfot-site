@@ -1,0 +1,140 @@
+.prizes {
+  position: relative;
+  background: #0f120f;
+  padding: 7rem 3rem;
+  text-align: center;
+}
+
+.prizes-eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #138808;
+}
+
+.prizes-heading {
+  margin: 0 auto 3rem;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #fff;
+  max-width: 760px;
+}
+
+.prizes-meta {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+  margin-bottom: 3rem;
+}
+
+.prizes-meta div span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff9933;
+}
+
+.prizes-meta div p {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bike-card {
+  max-width: 460px;
+  margin: 0 auto 3.5rem;
+  padding: 2rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.16), rgba(19, 136, 8, 0.12));
+  border: 1px solid rgba(255, 153, 51, 0.35);
+}
+
+.bike-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff9933;
+  margin-bottom: 0.6rem;
+}
+
+.bike-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.prize-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+.prize-card {
+  padding: 1.75rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prize-place {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.prize-amount {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.prizes-rules {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.rules-label {
+  margin: 0 0 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #138808;
+}
+
+.prizes-rules p:last-child {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .prize-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .prizes-meta {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .prizes {
+    padding: 5.5rem 1.5rem;
+  }
+  .prizes-rules {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}

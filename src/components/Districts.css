@@ -1,0 +1,120 @@
+.districts {
+  position: relative;
+  background: #0a0c0a;
+  padding: 7rem 3rem;
+  text-align: center;
+}
+
+.districts-eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff9933;
+}
+
+.districts-heading {
+  margin: 0 auto 2.5rem;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #fff;
+  max-width: 700px;
+}
+
+.districts-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+}
+
+.districts-search input {
+  flex: 1;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.districts-search input:focus {
+  border-color: #ff9933;
+}
+
+.districts-search input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.districts-count {
+  flex: none;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+.districts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.district-card {
+  padding: 1.4rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s ease;
+}
+
+.district-card:hover {
+  border-color: rgba(255, 153, 51, 0.35);
+}
+
+.district-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.district-card p {
+  margin: 0;
+  font-size: 0.83rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.districts-empty {
+  grid-column: 1 / -1;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+@media (max-width: 980px) {
+  .districts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .districts {
+    padding: 5.5rem 1.5rem;
+  }
+  .districts-search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .districts-grid {
+    grid-template-columns: 1fr;
+  }
+}

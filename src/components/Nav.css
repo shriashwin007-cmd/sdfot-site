@@ -1,0 +1,133 @@
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: transparent;
+  transition: background 0.3s ease, padding 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.site-nav--scrolled {
+  background: rgba(6, 8, 6, 0.78);
+  backdrop-filter: blur(14px);
+  padding: 0.85rem 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+}
+
+.site-nav-logo {
+  height: 34px;
+  width: 34px;
+  object-fit: contain;
+}
+
+.site-nav-menu {
+  display: flex;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav-menu a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.site-nav-menu a:hover {
+  color: #ff9933;
+}
+
+.site-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.site-nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.site-nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.site-nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.site-nav-mobile {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .site-nav {
+    padding: 1rem 1.5rem;
+  }
+  .site-nav--scrolled {
+    padding: 0.85rem 1.5rem;
+  }
+  .site-nav-menu {
+    display: none;
+  }
+  .site-nav-toggle {
+    display: flex;
+  }
+  .site-nav-mobile {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(4, 6, 4, 0.97);
+    backdrop-filter: blur(10px);
+    list-style: none;
+    margin: 0;
+    padding: 6.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  .site-nav-mobile.is-open {
+    transform: translateX(0);
+    display: flex;
+  }
+  .site-nav-mobile a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+}
