@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SplitHeading from './SplitHeading'
 import './Prizes.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -22,7 +23,7 @@ export default function Prizes() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.prizes-eyebrow, .prizes-heading',
+        '.prizes-eyebrow',
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -66,9 +67,9 @@ export default function Prizes() {
   return (
     <section id="prizes" ref={ref} className="prizes">
       <p className="prizes-eyebrow">Session 1</p>
-      <h2 className="prizes-heading">
+      <SplitHeading as="h2" className="prizes-heading">
         Tamil Nadu Inter-District Tennis Ball Cricket Tournament
-      </h2>
+      </SplitHeading>
 
       <div className="prizes-meta">
         <div>

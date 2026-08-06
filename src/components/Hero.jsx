@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SplitHeading from './SplitHeading'
 import './Hero.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -25,13 +26,7 @@ export default function Hero() {
       const tl = gsap.timeline({ delay: 0.2, defaults: { ease: 'power3.out' } })
       tl.fromTo('.hero-badge', { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.6 })
         .fromTo('.hero-eyebrow', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3')
-        .fromTo(
-          '.hero-word',
-          { opacity: 0, y: 60, filter: 'blur(12px)' },
-          { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1, stagger: 0.15 },
-          '-=0.2'
-        )
-        .fromTo('.hero-subtext', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.4')
+        .fromTo('.hero-subtext', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '+=0.9')
         .fromTo('.hero-divider', { scaleX: 0 }, { scaleX: 1, duration: 0.8 }, '-=0.3')
 
       gsap.to(glowRef.current, {
@@ -59,11 +54,11 @@ export default function Hero() {
 
         <p className="hero-eyebrow">Sports Development Federation of Tamil Nadu</p>
 
-        <h1 className="hero-headline">
+        <SplitHeading as="h1" className="hero-headline">
           <span className="hero-word hero-saffron">Identify.</span>
           <span className="hero-word hero-white">Cultivate.</span>
           <span className="hero-word hero-green">Empower.</span>
-        </h1>
+        </SplitHeading>
 
         <div className="hero-foot">
           <div className="hero-divider" />

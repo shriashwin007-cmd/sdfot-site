@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SplitHeading from './SplitHeading'
 import './Footer.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -17,7 +18,7 @@ export default function Footer() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.footer-cta, .sponsor-logo',
+        '.footer-cta p, .footer-cta .footer-btn, .sponsor-logo',
         { opacity: 0, y: 24 },
         {
           opacity: 1,
@@ -36,7 +37,7 @@ export default function Footer() {
   return (
     <footer id="contact" ref={ref} className="site-footer">
       <div className="footer-cta">
-        <h2>Ready to be discovered?</h2>
+        <SplitHeading as="h2">Ready to be discovered?</SplitHeading>
         <p>
           Register for your district selection and take the first step
           toward Tamil Nadu's biggest grassroots cricket pathway.

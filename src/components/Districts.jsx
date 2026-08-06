@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DISTRICTS from '../data/districts'
 import DepthCarousel from './DepthCarousel'
+import SplitHeading from './SplitHeading'
 import './Districts.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -22,7 +23,7 @@ export default function Districts() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.districts-eyebrow, .districts-heading, .districts-search',
+        '.districts-eyebrow, .districts-search',
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -61,7 +62,9 @@ export default function Districts() {
   return (
     <section id="districts" ref={ref} className="districts">
       <p className="districts-eyebrow">Coverage</p>
-      <h2 className="districts-heading">All 38 Districts &amp; Taluks of Tamil Nadu</h2>
+      <SplitHeading as="h2" className="districts-heading">
+        All 38 Districts &amp; Taluks of Tamil Nadu
+      </SplitHeading>
 
       <div className="districts-search">
         <input

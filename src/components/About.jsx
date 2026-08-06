@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SplitHeading from './SplitHeading'
 import './About.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -34,7 +35,7 @@ export default function About() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.about-eyebrow, .about-heading, .about-copy',
+        '.about-eyebrow, .about-copy',
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -67,11 +68,11 @@ export default function About() {
     <section id="about" ref={ref} className="about">
       <div className="about-intro">
         <p className="about-eyebrow">About SDFOT</p>
-        <h2 className="about-heading">
+        <SplitHeading as="h2" className="about-heading">
           Discovering talent in the streets.
           <br />
           Building champions for the nation.
-        </h2>
+        </SplitHeading>
         <p className="about-copy">
           A vision-led federation finding tennis-ball cricket talent in
           street cricket and local tournaments across Tamil Nadu — and

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SplitHeading from './SplitHeading'
 import './Pipeline.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -20,7 +21,7 @@ export default function Pipeline() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.pipeline-eyebrow, .pipeline-heading, .pipeline-copy',
+        '.pipeline-eyebrow, .pipeline-copy',
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -67,7 +68,9 @@ export default function Pipeline() {
   return (
     <section id="pipeline" ref={ref} className="pipeline">
       <p className="pipeline-eyebrow">The Pipeline</p>
-      <h2 className="pipeline-heading">Team Selection &amp; Development Plan</h2>
+      <SplitHeading as="h2" className="pipeline-heading">
+        Team Selection &amp; Development Plan
+      </SplitHeading>
       <p className="pipeline-copy">
         1,140 shortlisted players. One ₹20L state tournament. 4 elite Tamil
         Nadu teams.

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SplitHeading from './SplitHeading'
 import './Registration.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -24,7 +25,7 @@ export default function Registration() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        '.reg-eyebrow, .reg-heading, .reg-steps li',
+        '.reg-eyebrow, .reg-steps li',
         { opacity: 0, x: -30 },
         {
           opacity: 1,
@@ -70,7 +71,9 @@ export default function Registration() {
     <section id="registration" ref={ref} className="registration">
       <div className="reg-left">
         <p className="reg-eyebrow">Getting Involved</p>
-        <h2 className="reg-heading">Inter-District Selections &amp; Player Registration</h2>
+        <SplitHeading as="h2" className="reg-heading">
+          Inter-District Selections &amp; Player Registration
+        </SplitHeading>
         <p className="reg-lead">
           District-wise selections across all 38 districts to find the best
           talent and form District Representative Teams.

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import HIGHLIGHTS from '../data/highlights'
+import SplitHeading from './SplitHeading'
 import './Highlights.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -97,7 +98,9 @@ export default function Highlights() {
     <section id="highlights" ref={sectionRef} className="highlights">
       <div className="highlights-head">
         <p className="highlights-eyebrow">Highlights</p>
-        <h2 className="highlights-heading">On The Ground</h2>
+        <SplitHeading as="h2" className="highlights-heading">
+          On The Ground
+        </SplitHeading>
       </div>
 
       <div className="highlights-viewport">
