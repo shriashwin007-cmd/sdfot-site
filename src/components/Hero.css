@@ -9,10 +9,20 @@
   background: #050605;
 }
 
-.hero-grid {
+.hero-video {
   position: absolute;
   inset: 0;
   z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.15) contrast(1.05) brightness(0.85);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background-image:
     radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
   background-size: 28px 28px;
@@ -25,18 +35,19 @@
   left: 50%;
   width: 140vmax;
   height: 140vmax;
-  z-index: 0;
+  z-index: 1;
+  mix-blend-mode: screen;
   transform: translate(-50%, -50%);
   background:
     conic-gradient(
       from 0deg,
-      rgba(255, 153, 51, 0.16) 0deg,
+      rgba(255, 153, 51, 0.22) 0deg,
       transparent 60deg,
       transparent 160deg,
-      rgba(19, 136, 8, 0.16) 220deg,
+      rgba(19, 136, 8, 0.22) 220deg,
       transparent 280deg,
       transparent 340deg,
-      rgba(255, 153, 51, 0.16) 360deg
+      rgba(255, 153, 51, 0.22) 360deg
     );
   filter: blur(60px);
 }
@@ -44,13 +55,13 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  background: radial-gradient(ellipse 90% 70% at 50% 45%, transparent 30%, #050605 92%);
+  z-index: 3;
+  background: radial-gradient(ellipse 90% 70% at 50% 45%, rgba(5, 6, 5, 0.35) 20%, #050605 94%);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
@@ -150,7 +161,7 @@
   position: absolute;
   bottom: 2.5rem;
   right: 3rem;
-  z-index: 2;
+  z-index: 3;
   width: 26px;
   height: 42px;
   border: 2px solid rgba(255, 255, 255, 0.6);

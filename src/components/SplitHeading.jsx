@@ -12,7 +12,12 @@ export default function SplitHeading({ as: Tag = 'h2', className = '', children,
     const el = ref.current
     if (!el) return
 
-    const split = new SplitType(el, { types: 'chars', tagName: 'span' })
+    const split = new SplitType(el, { types: 'words, chars', tagName: 'span' })
+
+    split.words.forEach((wordEl) => {
+      wordEl.style.display = 'inline-block'
+      wordEl.style.whiteSpace = 'nowrap'
+    })
 
     split.chars.forEach((charEl) => {
       charEl.style.display = 'inline-block'

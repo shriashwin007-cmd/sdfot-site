@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import SectionBackground from './SectionBackground'
 import { useDepthTransition } from '../lib/useDepthTransition'
 import './Registration.css'
 
@@ -72,6 +73,7 @@ export default function Registration() {
 
   return (
     <section id="registration" ref={ref} data-depth-section className="registration">
+      <SectionBackground sectionRef={ref} src="/backgrounds/registration-bg.png" />
       <div className="reg-left">
         <p className="reg-eyebrow">Getting Involved</p>
         <SplitHeading as="h2" className="reg-heading">

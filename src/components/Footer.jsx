@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import SectionBackground from './SectionBackground'
 import { useDepthTransition } from '../lib/useDepthTransition'
 import { useMagnetic } from '../lib/useMagnetic'
 import './Footer.css'
@@ -42,6 +43,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" ref={ref} data-depth-section className="site-footer">
+      <SectionBackground sectionRef={ref} src="/backgrounds/footer-bg.png" />
       <div className="footer-cta">
         <SplitHeading as="h2">Ready to be discovered?</SplitHeading>
         <p>

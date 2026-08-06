@@ -1,0 +1,25 @@
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-bg-image {
+  position: absolute;
+  inset: -10% 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  filter: saturate(1.1) contrast(1.05);
+  will-change: transform;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 9, 8, 0.55) 0%, rgba(8, 9, 8, 0.75) 45%, rgba(8, 9, 8, 0.92) 100%),
+    radial-gradient(ellipse 70% 60% at 50% 40%, transparent 0%, rgba(8, 9, 8, 0.65) 85%);
+}

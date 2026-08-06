@@ -4,6 +4,11 @@
   padding: 8rem 3rem 6rem;
 }
 
+.about > *:not(.section-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 .about-intro {
   max-width: 780px;
   margin: 0 auto 5rem;

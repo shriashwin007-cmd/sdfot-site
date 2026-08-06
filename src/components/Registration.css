@@ -8,6 +8,11 @@
   align-items: start;
 }
 
+.registration > *:not(.section-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 .reg-eyebrow {
   margin: 0 0 1rem;
   font-size: 0.85rem;

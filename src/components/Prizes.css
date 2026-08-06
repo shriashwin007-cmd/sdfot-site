@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+.prizes > *:not(.section-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 .prizes-eyebrow {
   margin: 0 0 1rem;
   font-size: 0.85rem;

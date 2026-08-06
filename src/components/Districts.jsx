@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DISTRICTS from '../data/districts'
 import SplitHeading from './SplitHeading'
+import SectionBackground from './SectionBackground'
 import './Districts.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -95,6 +96,7 @@ export default function Districts() {
 
   return (
     <section id="districts" ref={sectionRef} className="districts">
+      <SectionBackground sectionRef={sectionRef} src="/backgrounds/districts-bg.png" />
       <div className="districts-head">
         <p className="districts-eyebrow">Coverage</p>
         <SplitHeading as="h2" className="districts-heading">

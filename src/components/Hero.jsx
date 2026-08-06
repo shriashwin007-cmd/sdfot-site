@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Hero() {
   const sectionRef = useRef(null)
   const glowRef = useRef(null)
+  const videoRef = useRef(null)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -21,6 +22,12 @@ export default function Hero() {
         pin: true,
         pinSpacing: true,
         scrub: 1,
+        onUpdate: (self) => {
+          gsap.set(videoRef.current, {
+            scale: 1 + self.progress * 0.25,
+            filter: `saturate(1.15) contrast(1.05) brightness(${0.85 - self.progress * 0.35})`,
+          })
+        },
       })
 
       const tl = gsap.timeline({ delay: 0.2, defaults: { ease: 'power3.out' } })
@@ -42,6 +49,15 @@ export default function Hero() {
 
   return (
     <section ref={sectionRef} className="hero">
+      <video
+        ref={videoRef}
+        className="hero-video"
+        src="/video/hero-cricket.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
       <div className="hero-grid" />
       <div ref={glowRef} className="hero-glow" />
       <div className="hero-overlay" />

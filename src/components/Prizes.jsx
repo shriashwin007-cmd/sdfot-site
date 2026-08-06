@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
 import TiltCard from './TiltCard'
+import SectionBackground from './SectionBackground'
 import { useDepthTransition } from '../lib/useDepthTransition'
 import './Prizes.css'
 
@@ -70,6 +71,7 @@ export default function Prizes() {
 
   return (
     <section id="prizes" ref={ref} data-depth-section className="prizes">
+      <SectionBackground sectionRef={ref} src="/backgrounds/prizes-bg.png" />
       <p className="prizes-eyebrow">Session 1</p>
       <SplitHeading as="h2" className="prizes-heading">
         Tamil Nadu Inter-District Tennis Ball Cricket Tournament
