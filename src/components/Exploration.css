@@ -1,0 +1,93 @@
+.exploration {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #050605;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exploration-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 90%);
+}
+
+.exploration-stage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.exploration-beat {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  will-change: transform, opacity, filter;
+}
+
+.exploration-index {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 1rem;
+}
+
+.exploration-text {
+  margin: 0;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 400;
+  font-size: clamp(3.5rem, 11vw, 9rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+}
+
+.exploration-text span {
+  display: block;
+}
+
+.exploration-saffron {
+  color: #ff9933;
+}
+
+.exploration-white {
+  color: #fff;
+}
+
+.exploration-green {
+  color: #138808;
+}
+
+.exploration-footer {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.exploration-dots {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.exploration-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}

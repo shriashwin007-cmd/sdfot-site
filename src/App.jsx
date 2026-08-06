@@ -1,6 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import ScrollCanvas from './components/ScrollCanvas'
+import Exploration from './components/Exploration'
 import About from './components/About'
 import Registration from './components/Registration'
 import Pipeline from './components/Pipeline'
@@ -9,6 +9,7 @@ import Prizes from './components/Prizes'
 import Districts from './components/Districts'
 import Footer from './components/Footer'
 import FloatingSocial from './components/FloatingSocial'
+import Divider from './components/Divider'
 import './App.css'
 
 function App() {
@@ -16,12 +17,16 @@ function App() {
     <div id="top">
       <Nav />
       <Hero />
-      <ScrollCanvas />
+      <Exploration />
       <About />
+      <Divider />
       <Registration />
+      <Divider />
       <Pipeline />
       <Highlights />
+      <Divider />
       <Prizes />
+      <Divider />
       <Districts />
       <Footer />
       <FloatingSocial />

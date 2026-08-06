@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Hero() {
   const sectionRef = useRef(null)
-  const videoRef = useRef(null)
+  const glowRef = useRef(null)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -23,14 +23,23 @@ export default function Hero() {
       })
 
       const tl = gsap.timeline({ delay: 0.2, defaults: { ease: 'power3.out' } })
-      tl.fromTo('.hero-eyebrow', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 })
+      tl.fromTo('.hero-badge', { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.6 })
+        .fromTo('.hero-eyebrow', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3')
         .fromTo(
           '.hero-word',
-          { opacity: 0, y: 40 },
-          { opacity: 1, y: 0, duration: 1, stagger: 0.15 },
+          { opacity: 0, y: 60, filter: 'blur(12px)' },
+          { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1, stagger: 0.15 },
           '-=0.2'
         )
         .fromTo('.hero-subtext', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.4')
+        .fromTo('.hero-divider', { scaleX: 0 }, { scaleX: 1, duration: 0.8 }, '-=0.3')
+
+      gsap.to(glowRef.current, {
+        rotate: 360,
+        duration: 40,
+        repeat: -1,
+        ease: 'none',
+      })
     }, section)
 
     return () => ctx.revert()
@@ -38,27 +47,30 @@ export default function Hero() {
 
   return (
     <section ref={sectionRef} className="hero">
-      <video
-        ref={videoRef}
-        className="hero-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        src="/video/hero-bg.mp4"
-      />
+      <div className="hero-grid" />
+      <div ref={glowRef} className="hero-glow" />
       <div className="hero-overlay" />
 
       <div className="hero-content">
+        <div className="hero-badge">
+          <img src="/logo/sdfot-logo.png" alt="SDFOT crest" />
+          <span>Est. 2026 · Tamil Nadu</span>
+        </div>
+
         <p className="hero-eyebrow">Sports Development Federation of Tamil Nadu</p>
+
         <h1 className="hero-headline">
-          <span className="hero-word hero-saffron">Identify.</span>{' '}
-          <span className="hero-word hero-white">Cultivate.</span>{' '}
+          <span className="hero-word hero-saffron">Identify.</span>
+          <span className="hero-word hero-white">Cultivate.</span>
           <span className="hero-word hero-green">Empower.</span>
         </h1>
-        <p className="hero-subtext">
-          A grassroots cricket pathway across all 38 districts of Tamil Nadu.
-        </p>
+
+        <div className="hero-foot">
+          <div className="hero-divider" />
+          <p className="hero-subtext">
+            A grassroots cricket pathway across all 38 districts of Tamil Nadu.
+          </p>
+        </div>
       </div>
 
       <div className="hero-scroll-hint">

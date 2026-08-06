@@ -3,9 +3,19 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 20%, #12140f 0%, #050604 70%);
+  background: #050605;
   display: flex;
   flex-direction: column;
+}
+
+.highlights::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, #000 30%, transparent 90%);
 }
 
 .highlights-head {
@@ -55,10 +65,10 @@
   inset: 0;
   width: 260px;
   height: 340px;
-  border-radius: 18px;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0d0f0c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   will-change: transform, opacity;
   transform-style: preserve-3d;
 }
@@ -70,20 +80,8 @@
   display: block;
 }
 
-.highlights-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 40%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .highlights-card.is-active {
-  box-shadow:
-    0 50px 100px -30px rgba(0, 0, 0, 0.85),
-    0 0 60px -10px rgba(255, 153, 51, 0.25);
-  border-color: rgba(255, 153, 51, 0.4);
+  border-color: #ff9933;
 }
 
 .highlights-caption {
