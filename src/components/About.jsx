@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
 import TiltCard from './TiltCard'
-import SectionBackground from './SectionBackground'
+import SectionVideoBackground from './SectionVideoBackground'
 import { useDepthTransition } from '../lib/useDepthTransition'
 import { useBatchReveal } from '../lib/useBatchReveal'
 import './About.css'
@@ -60,7 +60,7 @@ export default function About() {
 
   return (
     <section id="about" ref={ref} data-depth-section className="about">
-      <SectionBackground sectionRef={ref} src="/backgrounds/about-bg.png" />
+      <SectionVideoBackground sectionRef={ref} src="/video/about-street.mp4" />
       <div className="about-intro">
         <p className="about-eyebrow">About SDFOT</p>
         <SplitHeading as="h2" className="about-heading">

@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import HIGHLIGHTS from '../data/highlights'
 import SplitHeading from './SplitHeading'
+import SectionBackground from './SectionBackground'
 import './Highlights.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -96,6 +97,7 @@ export default function Highlights() {
 
   return (
     <section id="highlights" ref={sectionRef} className="highlights">
+      <SectionBackground sectionRef={sectionRef} src="/backgrounds/highlights-bg.png" />
       <div className="highlights-head">
         <p className="highlights-eyebrow">Highlights</p>
         <SplitHeading as="h2" className="highlights-heading">

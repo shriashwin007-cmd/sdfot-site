@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SectionBackground from './SectionBackground'
 import './Exploration.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -46,6 +47,7 @@ export default function Exploration() {
 
   return (
     <section ref={sectionRef} className="exploration">
+      <SectionBackground sectionRef={sectionRef} src="/backgrounds/exploration-bg.png" />
       <div className="exploration-grid" />
       <div className="exploration-stage">
         {BEATS.map((beat, i) => (
