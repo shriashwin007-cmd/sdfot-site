@@ -58,11 +58,11 @@
   white-space: nowrap;
 }
 
-.districts-gallery {
+.districts-carousel {
   position: relative;
   width: 100%;
   max-width: 1300px;
-  height: 560px;
+  height: 520px;
   margin: 0 auto;
 }
 
@@ -86,7 +86,7 @@
     flex-direction: column;
     align-items: stretch;
   }
-  .districts-gallery {
-    height: 420px;
+  .districts-carousel {
+    height: 380px;
   }
 }

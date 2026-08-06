@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DISTRICTS from '../data/districts'
-import CircularGallery from './CircularGallery'
+import DepthCarousel from './DepthCarousel'
 import './Districts.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -12,7 +12,7 @@ const CARD_COLORS = ['ff9933', 'ffffff', '138808']
 function districtImage(name, index) {
   const bg = CARD_COLORS[index % CARD_COLORS.length]
   const fg = bg === 'ffffff' ? '0a0c0a' : 'ffffff'
-  return `https://placehold.co/800x600/${bg}/${fg}?font=montserrat&text=${encodeURIComponent(name)}`
+  return `https://placehold.co/800x1000/${bg}/${fg}?font=montserrat&text=${encodeURIComponent(name)}`
 }
 
 export default function Districts() {
@@ -49,11 +49,11 @@ export default function Districts() {
     )
   }, [query])
 
-  const galleryItems = useMemo(
+  const carouselItems = useMemo(
     () =>
       filtered.map((d, i) => ({
         image: districtImage(d.name, i),
-        text: d.name,
+        alt: d.name,
       })),
     [filtered]
   )
@@ -75,15 +75,25 @@ export default function Districts() {
         </span>
       </div>
 
-      <div className="districts-gallery">
-        {galleryItems.length > 0 ? (
-          <CircularGallery
-            items={galleryItems}
-            bend={3}
-            textColor="#ffffff"
-            borderRadius={0.05}
-            scrollEase={0.02}
-            font="bold 28px Inter"
+      <div className="districts-carousel">
+        {carouselItems.length > 0 ? (
+          <DepthCarousel
+            key={carouselItems.length}
+            items={carouselItems}
+            cardWidth={260}
+            cardHeight={340}
+            radius={16}
+            tint="#0a0c0a"
+            depth={200}
+            spread={80}
+            tilt={20}
+            tiltDirection="right"
+            perspective={1300}
+            visibleCards={4}
+            falloff={0.18}
+            blur={5}
+            autoplay
+            loop
           />
         ) : (
           <p className="districts-empty">No districts or taluks match "{query}".</p>
