@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import { useDepthTransition } from '../lib/useDepthTransition'
 import './About.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -31,6 +32,8 @@ const PATHWAY = [
 
 export default function About() {
   const ref = useRef(null)
+
+  useDepthTransition(ref)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -65,7 +68,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" ref={ref} className="about">
+    <section id="about" ref={ref} data-depth-section className="about">
       <div className="about-intro">
         <p className="about-eyebrow">About SDFOT</p>
         <SplitHeading as="h2" className="about-heading">

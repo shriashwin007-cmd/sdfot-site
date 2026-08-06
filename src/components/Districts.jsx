@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DISTRICTS from '../data/districts'
 import DepthCarousel from './DepthCarousel'
 import SplitHeading from './SplitHeading'
+import { useDepthTransition } from '../lib/useDepthTransition'
 import './Districts.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -19,6 +20,8 @@ function districtImage(name, index) {
 export default function Districts() {
   const ref = useRef(null)
   const [query, setQuery] = useState('')
+
+  useDepthTransition(ref)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -60,7 +63,7 @@ export default function Districts() {
   )
 
   return (
-    <section id="districts" ref={ref} className="districts">
+    <section id="districts" ref={ref} data-depth-section className="districts">
       <p className="districts-eyebrow">Coverage</p>
       <SplitHeading as="h2" className="districts-heading">
         All 38 Districts &amp; Taluks of Tamil Nadu

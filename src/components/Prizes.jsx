@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import { useDepthTransition } from '../lib/useDepthTransition'
 import './Prizes.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -19,6 +20,8 @@ const PRIZES = [
 
 export default function Prizes() {
   const ref = useRef(null)
+
+  useDepthTransition(ref)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -65,7 +68,7 @@ export default function Prizes() {
   }, [])
 
   return (
-    <section id="prizes" ref={ref} className="prizes">
+    <section id="prizes" ref={ref} data-depth-section className="prizes">
       <p className="prizes-eyebrow">Session 1</p>
       <SplitHeading as="h2" className="prizes-heading">
         Tamil Nadu Inter-District Tennis Ball Cricket Tournament

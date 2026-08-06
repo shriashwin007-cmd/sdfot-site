@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import { useDepthTransition } from '../lib/useDepthTransition'
 import './Pipeline.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -17,6 +18,8 @@ const STATS = [
 
 export default function Pipeline() {
   const ref = useRef(null)
+
+  useDepthTransition(ref)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -66,7 +69,7 @@ export default function Pipeline() {
   }, [])
 
   return (
-    <section id="pipeline" ref={ref} className="pipeline">
+    <section id="pipeline" ref={ref} data-depth-section className="pipeline">
       <p className="pipeline-eyebrow">The Pipeline</p>
       <SplitHeading as="h2" className="pipeline-heading">
         Team Selection &amp; Development Plan

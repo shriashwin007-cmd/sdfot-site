@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import { useDepthTransition } from '../lib/useDepthTransition'
 import './Registration.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -21,6 +22,8 @@ const BENEFITS = [
 
 export default function Registration() {
   const ref = useRef(null)
+
+  useDepthTransition(ref)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -68,7 +71,7 @@ export default function Registration() {
   }, [])
 
   return (
-    <section id="registration" ref={ref} className="registration">
+    <section id="registration" ref={ref} data-depth-section className="registration">
       <div className="reg-left">
         <p className="reg-eyebrow">Getting Involved</p>
         <SplitHeading as="h2" className="reg-heading">

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitHeading from './SplitHeading'
+import { useDepthTransition } from '../lib/useDepthTransition'
 import './Footer.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -14,6 +15,8 @@ const SPONSORS = [
 
 export default function Footer() {
   const ref = useRef(null)
+
+  useDepthTransition(ref)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -35,7 +38,7 @@ export default function Footer() {
   }, [])
 
   return (
-    <footer id="contact" ref={ref} className="site-footer">
+    <footer id="contact" ref={ref} data-depth-section className="site-footer">
       <div className="footer-cta">
         <SplitHeading as="h2">Ready to be discovered?</SplitHeading>
         <p>
