@@ -2,9 +2,18 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DISTRICTS from '../data/districts'
+import CircularGallery from './CircularGallery'
 import './Districts.css'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const CARD_COLORS = ['ff9933', 'ffffff', '138808']
+
+function districtImage(name, index) {
+  const bg = CARD_COLORS[index % CARD_COLORS.length]
+  const fg = bg === 'ffffff' ? '0a0c0a' : 'ffffff'
+  return `https://placehold.co/800x600/${bg}/${fg}?font=montserrat&text=${encodeURIComponent(name)}`
+}
 
 export default function Districts() {
   const ref = useRef(null)
@@ -33,14 +42,21 @@ export default function Districts() {
     const q = query.trim().toLowerCase()
     if (!q) return DISTRICTS
 
-    return DISTRICTS.map((d) => {
-      const districtMatches = d.name.toLowerCase().includes(q)
-      const matchingTaluks = d.taluks.filter((t) => t.toLowerCase().includes(q))
-      if (districtMatches) return d
-      if (matchingTaluks.length) return { ...d, taluks: matchingTaluks }
-      return null
-    }).filter(Boolean)
+    return DISTRICTS.filter(
+      (d) =>
+        d.name.toLowerCase().includes(q) ||
+        d.taluks.some((t) => t.toLowerCase().includes(q))
+    )
   }, [query])
+
+  const galleryItems = useMemo(
+    () =>
+      filtered.map((d, i) => ({
+        image: districtImage(d.name, i),
+        text: d.name,
+      })),
+    [filtered]
+  )
 
   return (
     <section id="districts" ref={ref} className="districts">
@@ -59,17 +75,21 @@ export default function Districts() {
         </span>
       </div>
 
-      <div className="districts-grid">
-        {filtered.map((d) => (
-          <div className="district-card" key={d.name}>
-            <h3>{d.name}</h3>
-            <p>{d.taluks.join(', ')}</p>
-          </div>
-        ))}
-        {filtered.length === 0 && (
+      <div className="districts-gallery">
+        {galleryItems.length > 0 ? (
+          <CircularGallery
+            items={galleryItems}
+            bend={3}
+            textColor="#ffffff"
+            borderRadius={0.05}
+            scrollEase={0.02}
+            font="bold 28px Inter"
+          />
+        ) : (
           <p className="districts-empty">No districts or taluks match "{query}".</p>
         )}
       </div>
+      <p className="districts-hint">Drag, scroll, or use ← → to browse districts</p>
     </section>
   )
 }
