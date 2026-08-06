@@ -1,6 +1,6 @@
 .site-footer {
   position: relative;
-  background: #060806;
+  background: rgba(6, 8, 6, 0.9);
   padding: 6rem 3rem 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }

@@ -1,3 +1,4 @@
+import SceneCanvas from './components/SceneCanvas'
 import SmoothScroll from './components/SmoothScroll'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -15,24 +16,27 @@ import './App.css'
 
 function App() {
   return (
-    <div id="top">
-      <SmoothScroll />
-      <Nav />
-      <Hero />
-      <Exploration />
-      <About />
-      <Divider />
-      <Registration />
-      <Divider />
-      <Pipeline />
-      <Highlights />
-      <Divider />
-      <Prizes />
-      <Divider />
-      <Districts />
-      <Footer />
-      <FloatingSocial />
-    </div>
+    <>
+      <SceneCanvas />
+      <div id="top">
+        <SmoothScroll />
+        <Nav />
+        <Hero />
+        <Exploration />
+        <About />
+        <Divider />
+        <Registration />
+        <Divider />
+        <Pipeline />
+        <Highlights />
+        <Divider />
+        <Prizes />
+        <Divider />
+        <Districts />
+        <Footer />
+        <FloatingSocial />
+      </div>
+    </>
   )
 }
 

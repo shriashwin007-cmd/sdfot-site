@@ -1,6 +1,6 @@
 .registration {
   position: relative;
-  background: #0f120f;
+  background: rgba(15, 18, 15, 0.86);
   padding: 7rem 3rem;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
