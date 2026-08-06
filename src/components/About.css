@@ -21,10 +21,12 @@
 
 .about-heading {
   margin: 0 0 1.5rem;
-  font-size: clamp(1.8rem, 3.6vw, 2.75rem);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.25rem);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.02;
+  text-transform: uppercase;
   color: #fff;
 }
 

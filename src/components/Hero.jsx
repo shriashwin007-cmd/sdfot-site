@@ -57,8 +57,7 @@ export default function Hero() {
           <span className="hero-word hero-green">Empower.</span>
         </h1>
         <p className="hero-subtext">
-          Discovering talent, building champions — a grassroots tennis-ball
-          cricket pathway across all 38 districts of Tamil Nadu.
+          A grassroots cricket pathway across all 38 districts of Tamil Nadu.
         </p>
       </div>
 

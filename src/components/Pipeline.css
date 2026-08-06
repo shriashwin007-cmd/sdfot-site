@@ -16,10 +16,13 @@
 
 .pipeline-heading {
   margin: 0 auto 1.25rem;
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-  font-weight: 800;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2.4rem, 5.2vw, 4rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.02;
   color: #fff;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .pipeline-copy {
@@ -47,8 +50,9 @@
 
 .stat-value {
   margin: 0 0 0.5rem;
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
-  font-weight: 800;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2.6rem, 4.4vw, 3.75rem);
+  font-weight: 400;
   background: linear-gradient(135deg, #ff9933, #fff 50%, #138808);
   -webkit-background-clip: text;
   background-clip: text;

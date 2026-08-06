@@ -72,9 +72,8 @@ export default function Registration() {
         <p className="reg-eyebrow">Getting Involved</p>
         <h2 className="reg-heading">Inter-District Selections &amp; Player Registration</h2>
         <p className="reg-lead">
-          SDFOT conducts a district-wise selection process across all 38
-          districts to identify the best cricket talent and form District
-          Representative Teams.
+          District-wise selections across all 38 districts to find the best
+          talent and form District Representative Teams.
         </p>
 
         <ol className="reg-steps">

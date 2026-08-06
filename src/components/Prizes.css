@@ -16,10 +16,13 @@
 
 .prizes-heading {
   margin: 0 auto 3rem;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 800;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.05;
   color: #fff;
-  max-width: 760px;
+  max-width: 860px;
 }
 
 .prizes-meta {
@@ -94,8 +97,9 @@
 
 .prize-amount {
   margin: 0;
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.85rem;
+  font-weight: 400;
   color: #fff;
 }
 

@@ -7,14 +7,17 @@
 
 .footer-cta {
   text-align: center;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto 4.5rem;
 }
 
 .footer-cta h2 {
   margin: 0 0 1rem;
-  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
-  font-weight: 800;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2.4rem, 5.2vw, 4rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.02;
   color: #fff;
 }
 

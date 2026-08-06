@@ -47,11 +47,11 @@
 
 .hero-headline {
   margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 800;
-  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 8.5vw, 7.5rem);
+  letter-spacing: 0.01em;
+  line-height: 0.95;
   text-transform: uppercase;
 }
 
@@ -131,7 +131,7 @@
     padding: 0 1.5rem 4rem;
   }
   .hero-headline {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(2.5rem, 13vw, 4rem);
   }
   .hero-scroll-hint {
     right: 1.5rem;

@@ -73,11 +73,9 @@ export default function About() {
           Building champions for the nation.
         </h2>
         <p className="about-copy">
-          SDFOT is a vision-led federation identifying and nurturing
-          tennis-ball cricket talent across all 38 districts of Tamil Nadu.
-          We discover players performing in street cricket and local
-          tournaments, and help them progress to stadium cricket,
-          professional tournaments, and national-level competitions.
+          A vision-led federation finding tennis-ball cricket talent in
+          street cricket and local tournaments across Tamil Nadu — and
+          taking it to stadiums, pro tournaments, and the national stage.
         </p>
       </div>
 

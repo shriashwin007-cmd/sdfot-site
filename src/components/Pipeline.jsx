@@ -69,11 +69,8 @@ export default function Pipeline() {
       <p className="pipeline-eyebrow">The Pipeline</p>
       <h2 className="pipeline-heading">Team Selection &amp; Development Plan</h2>
       <p className="pipeline-copy">
-        Each district team fields 20 main players (including 2 U-19 / U-16
-        players) plus 10 standby players — 38 × 30 = 1,140 shortlisted
-        players compete in an expansive Tamil Nadu State Tournament with an
-        overall budget of ₹20 lakhs, narrowing down to 80 top players and 4
-        elite Tamil Nadu teams.
+        1,140 shortlisted players. One ₹20L state tournament. 4 elite Tamil
+        Nadu teams.
       </p>
 
       <div className="stat-grid">
