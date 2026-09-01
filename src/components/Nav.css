@@ -66,6 +66,12 @@
   border-color: #ff9933;
 }
 
+.site-nav-menu a.is-active {
+  color: #050605;
+  background: #138808;
+  border-color: #138808;
+}
+
 .site-nav-toggle {
   display: none;
   flex-direction: column;
