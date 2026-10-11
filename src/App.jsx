@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import SceneCanvas from './components/SceneCanvas'
-import CustomCursor from './components/CustomCursor'
 import FloatingSocial from './components/FloatingSocial'
 import Nav from './components/Nav'
 import Landing from './pages/Landing'
@@ -11,7 +10,6 @@ function App() {
   return (
     <>
       <SceneCanvas />
-      <CustomCursor />
       <Nav />
       <Routes>
         <Route path="/" element={<Landing />} />
